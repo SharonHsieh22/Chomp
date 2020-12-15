@@ -98,7 +98,11 @@ public class CharMatrix
      */
     public void clearRect(int row0, int col0, int row1, int col1)
     {
-        //your answer goes here
+        for(int r = row0; r <= row1; r++) {
+          for(int c = col0; c <= col1; c++) {
+              grid[r][c] = ' '; 
+            }
+        }
     }
 
     /*
@@ -106,7 +110,12 @@ public class CharMatrix
      */
     public int countInRow(int row)
     {
-        //your answer goes here
+        int n = 0;
+        for(int c = 0; c < grid[0].length; c++) {
+            
+            if(grid[row][c] != ' ') n++;
+         }
+        return n;
     }
 
     /*
@@ -114,7 +123,12 @@ public class CharMatrix
      */
     public int countInCol(int col)
     {
-        //your answer goes here
+        int n = 0;
+        for(int r = 0; r < grid.length; r++) {
+            
+            if(grid[r][col] != ' ') n++;
+         }
+        return n;
     }
 
     public void printMatrix() {
